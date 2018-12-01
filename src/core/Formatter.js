@@ -77,8 +77,11 @@ export default class Formatter {
             else if (token.value === ":") {
                 formattedQuery = this.formatWithSpaceAfter(token, formattedQuery);
             }
-            else if (token.value === "." || token.value === ";") {
+            else if (token.value === ".")  {
                 formattedQuery = this.formatWithoutSpaces(token, formattedQuery);
+            }
+            else if (token.value === ";") {
+                formattedQuery = this.formatWithoutSpaces(token, formattedQuery) + '\n\n';
             }
             else {
                 formattedQuery = this.formatWithSpaces(token, formattedQuery);
